@@ -1,5 +1,7 @@
 # Time Tracking Dashboard
 
+![Dashboard Preview](./image.png)
+
 This project is a responsive Time Tracking Dashboard built as a frontend challenge from Frontend Mentor. It allows users to view their time spent on various activities with daily, weekly, and monthly views.
 
 ## Features
