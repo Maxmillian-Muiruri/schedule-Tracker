@@ -1,4 +1,6 @@
 # Time Tracking Dashboard
+➡[View live site]](https://schedule-tracker-three.vercel.app/)
+
 
 ![Dashboard Preview](./image.png)
 
