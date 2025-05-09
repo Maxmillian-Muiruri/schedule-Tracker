@@ -10,8 +10,11 @@ body {
   display: grid;
   text-align: center;
   align-items: center;
-  position: fixed;
-  /* color: white; */
+  
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-width: 100%;
+  
   font-family: Arial, Helvetica, sans-serif;
 
   padding: 1rem;
@@ -31,6 +34,10 @@ body {
   padding: 1.5em;
   border-radius: 10px;
 }
+.profile > p {
+  display: flex;
+  justify-content: start;
+}
 .side-bar {
   background-color: hsl(246, 80%, 60%);
   border-radius: 10px;
@@ -39,11 +46,17 @@ body {
 }
 
 .profile-img {
+  display: flex;
+  justify-content: start;
   height: 60px;
   width: 60px;
   border-radius: 50%;
   border: 3px solid #fff;
   margin-bottom: 2em;
+}
+.profile-img:hover {
+  cursor: pointer;
+  transform: scale(1.5);
 }
 
 .report {
@@ -53,7 +66,7 @@ body {
 
 .name {
   font-size: 1.5em;
-  color: white;
+  color: rgba(184, 177, 240, 255);
 }
 
 .times {
@@ -66,18 +79,21 @@ body {
   text-align: center;
   margin-top: 2rem;
 }
+.times > p {
+  font-size: 15px;
+}
 .faint {
-  color: rgb(79, 77, 77);
+  color: #5c619c;
   font-weight: lighter;
 }
 .active {
   margin: 0.5em 0;
-  color: rgb(202, 201, 201);
+  color: rgb(254, 252, 252);
 }
-.faint,
-.active:hover {
-  color: white;
+.times > p:hover {
   cursor: pointer;
+  font-weight: 600;
+  color: rgba(199, 201, 211, 255);
 }
 
 .hours {
@@ -113,6 +129,11 @@ body {
 .hours-item .time {
   font-size: 2em;
   margin-top: 0.5em;
+}
+
+.hours-item:hover {
+  cursor: pointer;
+  background-color: rgba(52, 57, 123, 255) !important;
 }
 
 .hours-item::after {
@@ -170,8 +191,49 @@ body {
   background-position: top right;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 414px) {
   .container {
     grid-template-columns: 1fr;
+    padding: 0 1rem;
+  }
+  .side-bar {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+  }
+  .times {
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    margin-top: 1rem;
+  }
+  .profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile-img {
+    height: 55px;
+    width: 55px;
+    margin-bottom: 1rem;
+  }
+  .name {
+    font-size: 1.3em;
+  }
+  .report {
+    font-size: 0.75em;
+  }
+  .hours {
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hours-item {
+    margin-top: 10px;
+    padding: 0.8em;
+  }
+  .hours-item .time {
+    font-size: 1.6em;
   }
 }
